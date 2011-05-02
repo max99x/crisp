@@ -1,0 +1,138 @@
+################################################################################
+#                                 CHECK BOXES                                  #
+################################################################################
+
+style "checkbox" {
+  GtkCheckButton::indicator_size = 14
+
+  engine "pixmap" {
+    image {
+      function = CHECK
+      state = NORMAL
+      shadow = OUT
+      overlay_file = "/check/unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = PRELIGHT
+      shadow = OUT
+      overlay_file = "/check/unchecked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = ACTIVE
+      shadow = OUT
+      overlay_file = "/check/unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "/check/unchecked_disabled.png"
+      overlay_stretch = FALSE
+    }
+
+    image {
+      function = CHECK
+      state = NORMAL
+      shadow = IN
+      overlay_file = "/check/checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = PRELIGHT
+      shadow = IN
+      overlay_file = "/check/checked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = ACTIVE
+      shadow = IN
+      overlay_file = "/check/checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "/check/checked_disabled.png"
+      overlay_stretch = FALSE
+    }
+  }
+}
+
+class "GtkCheckButton" style "checkbox"
+
+style "checkbox-menu" {
+  GtkCheckButton::indicator_size = 14
+
+  engine "pixmap" {
+    image {
+      function = CHECK
+      state = NORMAL
+      shadow = OUT
+      overlay_file = "/check/menu_unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = PRELIGHT
+      shadow = OUT
+      overlay_file = "/check/menu_unchecked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = ACTIVE
+      shadow = OUT
+      overlay_file = "/check/menu_unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "/check/menu_unchecked_disabled.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      recolorable = TRUE
+      state = NORMAL
+      shadow = IN
+      overlay_file = "/check/menu_checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      recolorable = TRUE
+      state = PRELIGHT
+      shadow = IN
+      overlay_file = "/check/menu_checked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      recolorable = TRUE
+      state = ACTIVE
+      shadow = IN
+      overlay_file = "/check/menu_checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      recolorable = TRUE
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "/check/menu_checked_disabled.png"
+      overlay_stretch = FALSE
+    }
+  }
+}
+
+class "GtkCheckMenuItem" style "checkbox-menu"

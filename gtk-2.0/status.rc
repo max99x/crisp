@@ -1,0 +1,10 @@
+################################################################################
+#                                  STATUS BAR                                  #
+################################################################################
+
+style "statusbar" {
+  GtkStatusbar::shadow-type = GTK_SHADOW_NONE
+  engine "clearlooks" {}
+}
+
+class "GtkStatusbar" style "statusbar"

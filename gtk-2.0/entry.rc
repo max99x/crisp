@@ -1,0 +1,47 @@
+################################################################################
+#                                    ENTRY                                     #
+################################################################################
+
+style "entry" {
+  GtkOptionMenu::indicator-size = {0, 0, 0, 0}
+  GtkOptionMenu::indicator-spacing = {10, 10, 0, 0}
+
+  xthickness = 3
+  ythickness = 3
+
+  fg[NORMAL] = "#1A1A1A"
+  fg[PRELIGHT] = "#1A1A1A"
+  fg[SELECTED] = "#1A1A1A"
+  fg[ACTIVE] = "#1A1A1A"
+  fg[INSENSITIVE] = "#808080"
+
+  bg[NORMAL] = "#EDEDED" 
+  bg[ACTIVE] = "#E6E0E5"
+  bg[SELECTED] = "#BBBBBB" 
+  bg[PRELIGHT] = "#CCCCCC"
+  bg[INSENSITIVE] = "#707070"
+
+  base[NORMAL] = "#FAFAFA"
+  base[PRELIGHT] = "#BBBBBB"
+  base[ACTIVE] = "#9E9E9E"
+  base[SELECTED] = "#5B565A"
+  base[INSENSITIVE] = "#E7E7E7"
+
+  text[NORMAL] = "#1A1A1A" 
+  text[PRELIGHT] = "#1A1A1A"
+  text[ACTIVE] = "#1A1A1A"
+  text[SELECTED] = "#F7F7F5"
+  text[INSENSITIVE] = "#707070"
+
+  engine "clearlooks" {
+    radius = 2.0
+    style = GLOSSY
+  }
+}
+
+class "GtkEntry" style "entry"
+class "GtkOldEditable" style "entry"
+class "GtkSpinButton" style "entry"
+class "GtkEntry" style "entry"
+class "GtkOldEditable" style "entry"
+widget_class "*SpinButton*" style:highest "entry"

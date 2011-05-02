@@ -1,0 +1,29 @@
+################################################################################
+#                                   TOOLBAR                                    #
+################################################################################
+
+
+style "toolbar" {
+  GtkToolbar::internal-padding = 2
+  GtkToolbar::shadow-type = GTK_SHADOW_NONE
+
+  xthickness = 2
+  ythickness = 0
+
+  fg[NORMAL] = "#000000"
+  fg[PRELIGHT] = "#000000"
+  fg[ACTIVE] = "#000000"
+  text[NORMAL] = "#000000"
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      file = "/toolbar/background.png"
+      border = {1, 1, 1, 1 }
+      stretch = TRUE
+    }
+  }
+}
+
+class "*HandleBox" style "toolbar"
+widget_class "*.GtkTool*" style:lowest "toolbar"

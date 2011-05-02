@@ -1,0 +1,129 @@
+################################################################################
+#                                 RADIO BUTTONS                                #
+################################################################################
+
+style "radio" {
+  engine "pixmap" {
+    image {
+      function = OPTION
+      state = NORMAL
+      shadow = OUT
+      overlay_file = "/radio/unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = PRELIGHT
+      shadow = OUT
+      overlay_file = "/radio/unchecked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = ACTIVE
+      shadow = OUT
+      overlay_file = "/radio/unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "/radio/unchecked_disabled.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = NORMAL
+      shadow = IN
+      overlay_file = "/radio/checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = PRELIGHT
+      shadow = IN
+      overlay_file = "/radio/checked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = ACTIVE
+      shadow = IN
+      overlay_file = "/radio/checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "/radio/checked_disabled.png"
+      overlay_stretch = FALSE
+    }
+  }
+}
+
+class "GtkRadioButton" style "radio"
+
+style "radio-menu" {
+  engine "pixmap" {
+    image {
+      function = OPTION
+      state = NORMAL
+      shadow = OUT
+      overlay_file = "/radio/menu_unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = PRELIGHT
+      shadow = OUT
+      overlay_file = "/radio/menu_unchecked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = ACTIVE
+      shadow = OUT
+      overlay_file = "/radio/menu_unchecked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "/radio/menu_unchecked_disabled.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = NORMAL
+      shadow = IN
+      overlay_file = "/radio/menu_checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = PRELIGHT
+      shadow = IN
+      overlay_file = "/radio/menu_checked_focus.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = ACTIVE
+      shadow = IN
+      overlay_file = "/radio/menu_checked_normal.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "/radio/menu_checked_disabled.png"
+      overlay_stretch = FALSE
+    }
+  }
+}
+
+class "GtkCheckMenuItem" style "radio-menu"

@@ -1,0 +1,66 @@
+################################################################################
+#                                    THUNAR                                    #
+################################################################################
+
+style "thunar-toolbar" {
+  GtkButton:: child-displacement-y = 0
+  GtkButton:: child-displacement-x = 0
+  GtkButton:: inner-border = {0, 13, 0, 0}
+
+  ythickness = 0
+  xthickness = 10
+
+  #fg[NORMAL] = @bg_color
+  #fg[ACTIVE] = @bg_color
+  #fg[PRELIGHT] = @bg_color
+  #fg[SELECTED] = @bg_color
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state = NORMAL
+      file = "thunar/pathbar-normal.png"
+      border = { 0, 13, 0, 0 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = ACTIVE
+      file = "thunar/pathbar-active.png"
+      border = { 0, 13, 0, 0 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = PRELIGHT
+      file = "thunar/pathbar-prelight.png"
+      border = { 0, 13, 0, 0 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = SELECTED
+      file = "thunar/pathbar-prelight.png"
+      border = { 0, 13, 0, 0 }
+      stretch = TRUE
+    }
+  }
+}
+
+widget "*Thunar*LocationButton*" style "thunar-toolbar"
+
+style "thunar-toolbar-text" {
+  fg[NORMAL] = "#000000"
+  fg[ACTIVE] = "#000000"
+  fg[PRELIGHT] = "#555555"
+  fg[SELECTED] = "#000000"
+  fg[INSENSITIVE] = "#888888"
+  
+  bg[NORMAL] = "#FF0000"
+  bg[ACTIVE] = "#00FF00"
+  bg[PRELIGHT] = "#0000FF"
+  bg[SELECTED] = "#00FFFF"
+  bg[INSENSITIVE] = "#FF00FF"
+}
+
+widget "*Thunar*LocationButton*Label*" style "thunar-toolbar-text"

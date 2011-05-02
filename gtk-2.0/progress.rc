@@ -1,0 +1,21 @@
+################################################################################
+#                                 PROGRESS BAR                                 #
+################################################################################
+
+style "progress" {
+  GtkProgressBar::shadow-type = GTK_SHADOW_NONE
+
+  xthickness = 1
+  ythickness = 1
+
+  fg[NORMAL] = "#000000"
+  fg[PRELIGHT] = "#FFFFFF"
+  bg[NORMAL] = "#FFFFFF"
+  bg[SELECTED] = "#666666"
+
+  engine "aurora" {
+    animation = TRUE
+  }
+}
+
+widget_class "*ProgressBar*" style "progress"

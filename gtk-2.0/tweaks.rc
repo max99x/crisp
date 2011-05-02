@@ -1,0 +1,19 @@
+################################################################################
+#                                     MISC                                     #
+################################################################################
+
+style "nostyle" {
+  engine "pixmap" {
+    image {
+      function = SHADOW
+    }
+  }
+}
+
+class "GtkEventBox" style "nostyle"
+
+style "expander" {
+  GtkExpander::expander_size = 10
+}
+
+class "GtkExpander" style "expander"

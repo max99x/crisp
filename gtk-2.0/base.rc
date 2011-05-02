@@ -1,0 +1,65 @@
+################################################################################
+#                                     BASE                                     #
+################################################################################
+
+style "base" {
+  GtkWidget::focus_padding = 0
+
+  fg[NORMAL] = "#000000"
+  fg[PRELIGHT] = "#000000"
+  fg[ACTIVE] = "#000000"
+  fg[SELECTED] = "#FFFFFF"
+  fg[INSENSITIVE] = "#747474"
+
+  bg[NORMAL] = "#EEEEEE"  
+  bg[PRELIGHT] = "#CCCCCC"
+  bg[ACTIVE] = "#CCCCCC"
+  bg[SELECTED] = "#FFFFFF" 
+  bg[INSENSITIVE] = "#D9D9D9"
+
+  base[NORMAL] = "#FAFAFA"
+  base[PRELIGHT] = "#FFFFFF"
+  base[ACTIVE] = "#CDCDCD" 
+  base[SELECTED] = "#3D3D3D"
+  base[INSENSITIVE]= "#D7D7D7"
+
+  text[NORMAL] = "#000000"
+  text[PRELIGHT] = "#000000"
+  text[ACTIVE] = "#000000"
+  text[SELECTED] = "#FFFFFF"
+  text[INSENSITIVE]= "#747474"
+
+  engine "pixmap" {
+    image {
+      function = VLINE
+      recolorable = TRUE
+      file = "/lines/line-v-black.png"
+      border = {0, 0, 0, 0}
+      stretch = TRUE
+    }
+    image {
+      function = HLINE
+      recolorable = TRUE
+      file = "/lines/line-h-black.png"
+      border = {0, 0, 0, 0}
+      stretch = TRUE
+    }
+
+    image {
+      function = HANDLE
+      recolorable = TRUE
+      overlay_file = "/handles/handle-v.png"
+      overlay_stretch = TRUE
+      orientation = VERTICAL
+    }
+    image {
+      function = HANDLE
+      recolorable = TRUE
+      overlay_file = "/handles/handle-h.png"
+      overlay_stretch = TRUE
+      orientation = HORIZONTAL
+    }
+  }
+}
+
+class "GtkWidget"                   style "base"

@@ -1,0 +1,104 @@
+################################################################################
+#                                     MENU                                     #
+################################################################################
+
+style "menubar" {
+  GtkMenuBar::internal-padding = 4
+  GtkMenuBar::shadow-type = GTK_SHADOW_NONE
+
+  fg[NORMAL] = "#FFFFFF"
+  fg[PRELIGHT] = "#FFFFFF"
+  text[NORMAL] = "#FFFFFF"
+  text[PRELIGHT] = "#FFFFFF"
+
+  xthickness = 3
+  ythickness = 2
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state = NORMAL
+      file = "/menu/menubar.png"
+      border = {0, 0, 0, 0}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      recolorable = TRUE
+      state = PRELIGHT
+      file = "/menu/prelight.png"
+      border = {5 ,5, 5, 0}
+      stretch = TRUE
+    }
+  }
+}
+
+widget_class "*<GtkMenuBar>*" style "menubar"
+
+style "menu" {
+  xthickness = 2
+  ythickness = 2
+
+  fg[NORMAL] = "#FFFFFF"
+  fg[PRELIGHT] = "#FFFFFF"
+  text[NORMAL] = "#FFFFFF"
+  text[PRELIGHT] = "#FFFFFF"
+
+  bg[ACTIVE] = "#333333"
+  bg[NORMAL] = "#333333"
+  bg[PRELIGHT] = "#333333"
+  bg[SELECTED] = "#333333"
+  bg[INSENSITIVE] = "#444444"
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      recolorable = TRUE
+      detail = "menu"
+      file = "/menu/background.png"
+      stretch = TRUE
+      border = {0, 0, 0, 0}
+      overlay_file = "/menu/menu.png"
+      overlay_border = {28, 2, 2, 2}
+      overlay_stretch = TRUE
+    }
+    image {
+      function = VLINE
+      recolorable = TRUE
+      file = "/lines/line-v.png"
+      border = {0, 0, 0, 0}
+      stretch = TRUE
+    }
+    image {
+      function = HLINE
+      recolorable = TRUE
+      file = "/lines/line-h.png"
+      border = {0, 0, 0, 0}
+      stretch = TRUE
+    }
+  }
+}
+
+widget_class "*<GtkMenu>*" style "menu"
+
+style "menuitem" {
+  engine "pixmap" {
+    image {
+      function = BOX
+      recolorable = TRUE
+      state = PRELIGHT
+      file = "/menu/item.png"
+      border = {1, 1, 1, 1}
+      stretch = TRUE
+    }
+  }
+}
+
+class "GtkMenuItem" style "menuitem"
+
+# Disable drop shadow menu items.
+style "no-menu-text-shadow" {
+  engine "clearlooks" {}
+}
+
+widget_class "*<GtkMenu>*Label*" style "no-menu-text-shadow"

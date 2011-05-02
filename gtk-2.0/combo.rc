@@ -1,0 +1,35 @@
+################################################################################
+#                                  COMBO-BOX                                   #
+################################################################################
+
+style "combo-menu" {
+  xthickness = 2
+  ythickness = 2
+
+  fg[NORMAL] = "#000000"
+  fg[PRELIGHT] = "#000000"
+
+  text[NORMAL] = "#000000"
+  text[PRELIGHT] = "#000000"
+
+  bg[NORMAL] = "#DDDDDD"
+  bg[PRELIGHT] = "#DDDDDD"
+  bg[SELECTED] = "#DDDDDD"
+
+  base[NORMAL] = "#AAAAAA"
+  base[PRELIGHT] = "#AAAAAA"
+  base[SELECTED] = "#AAAAAA"
+
+  engine "pixmap" {
+    image {
+      function = BOX
+    }
+  }
+
+  engine "clearlooks" {
+    style = GLOSSY
+  }
+}
+
+widget "*.gtk-combobox-popup-menu" style "combo-menu"
+widget "*.gtk-combobox-popup-menu.*" style "combo-menu"

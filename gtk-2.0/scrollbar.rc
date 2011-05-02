@@ -1,0 +1,19 @@
+################################################################################
+#                                  SCROLLBAR                                   #
+################################################################################
+
+style "scrollbar" {
+  GtkScrollbar::min_slider_length = 30
+
+  xthickness = 1
+  ythickness = 1
+
+  bg[NORMAL] = "#E5E6E0"
+  bg[ACTIVE] = "#EEECDE"
+  bg[SELECTED] = "#B3B5B1"
+  bg[INSENSITIVE] = "#DAD8CA"
+
+  engine "murrine" {}
+}
+
+class "GtkScrollbar" style "scrollbar"

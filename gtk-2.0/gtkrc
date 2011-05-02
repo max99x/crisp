@@ -1,0 +1,28 @@
+# Crisp theme, based on SlicknesS, Creamy, Victory and BSM Simple.
+# Used engines:
+#   pixmap: most widgets
+#   clearlooks: menu label, frame, button, entry, tab, statusbar
+#   murrine: scrollbar
+#   aurora: progressbar
+
+gtk-icon-sizes = "panel-applications-menu=38,38"
+gtk-button-images = 1
+
+include "base.rc"
+include "panel.rc"
+include "menu.rc"
+include "progress.rc"
+include "scale.rc"
+include "check.rc"
+include "radio.rc"
+include "button.rc"
+include "toolbar.rc"
+include "status.rc"
+include "entry.rc"
+include "tabs.rc"
+include "frame.rc"
+include "treelist.rc"
+include "scrollbar.rc"
+include "combo.rc"
+include "thunar.rc"
+include "tweaks.rc"

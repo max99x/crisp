@@ -1,0 +1,65 @@
+################################################################################
+#                              TREE- & LIST-VIEW                               #
+################################################################################
+
+style "treeview" {
+  GtkTreeView::expander_size = 10
+  GtkTreeView::odd_row_color = "#DDDDDD"
+  GtkTreeView::even_row_color = "#FFFFFF"
+}
+
+class "GtkTreeView" style "treeview"
+
+style "treelist" {
+  fg[NORMAL] = "#000000"
+  fg[PRELIGHT] = "#000000"
+  fg[ACTIVE] = "#000000"
+  fg[SELECTED] = "#000000"
+  fg[INSENSITIVE] = "#000000"
+
+  text[NORMAL] = "#000000"
+  text[PRELIGHT] = "#000000"
+  text[ACTIVE] = "#000000"
+  text[SELECTED] = "#000000"
+  text[INSENSITIVE] = "#000000"
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      state = NORMAL
+      file = "/treelist/header.png"
+      border = { 4 ,4, 4, 4}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = PRELIGHT
+      file = "/treelist/header-prelight.png"
+      border = { 4 ,4, 4, 4}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = ACTIVE
+      file = "/treelist/header-active.png"
+      border = { 4 ,4, 4, 4}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = INSENSITIVE
+      file = "/treelist/header.png"
+      border = { 4 ,4, 4, 4}
+      stretch = TRUE
+    }
+  }
+}
+
+widget_class "*List" style "treelist"
+widget_class "*GtkCList" style "treelist"
+widget_class "*GtkTree" style "treelist"
+widget_class "*.GtkCTree.GtkButton" style "treelist"
+widget_class "*.GtkList.GtkButton" style "treelist"
+widget_class "*.GtkCList.GtkButton" style "treelist"
+widget_class "*.GtkTreeView.GtkButton" style "treelist"
+widget_class "*Thunar*TreeView.GtkButton" style "treelist"

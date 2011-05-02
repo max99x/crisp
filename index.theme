@@ -1,0 +1,7 @@
+[X-GNOME-Metatheme]
+Name=Crisp
+Encoding=UTF-8
+GtkTheme=Crisp
+IconTheme=Faenza
+NotificationTheme=ubuntu
+ButtonLayout=menu:close,minimize,maximize

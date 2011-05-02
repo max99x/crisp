@@ -1,0 +1,21 @@
+################################################################################
+#                                    FRAME                                     #
+################################################################################
+
+style "frame" {
+  xthickness = 3
+  ythickness = 3
+
+  bg[NORMAL]          = "#EFEFEF"
+  bg[SELECTED]        = "#E5E5E5"
+
+  base[NORMAL]        = "#FAFAFA"
+  base[SELECTED]      = "#777777"
+
+  engine "clearlooks" {
+    radius = 1.0
+    style = GLOSSY
+  }
+}
+
+class "GtkContainer" style "frame"

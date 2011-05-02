@@ -1,0 +1,109 @@
+################################################################################
+#                                    PANELS                                    #
+################################################################################
+
+# The main panel background.
+style "panel" {
+  xthickness = 0
+  ythickness = 0
+
+  fg[NORMAL] = "#D7D7D7"
+  fg[PRELIGHT] = "#FFFFFF"
+  fg[ACTIVE] = "#F0F0F0"
+  fg[SELECTED] = "#000000"
+  fg[INSENSITIVE] = "#6B6B6B"
+
+  bg[NORMAL] = "#0D0D0D"
+  bg[SELECTED] = "#3D3D3D"
+
+  bg_pixmap[NORMAL] = "panel/base.png"
+  bg_pixmap[PRELIGHT] = "panel/base.png"
+  bg_pixmap[ACTIVE] = "panel/base.png"
+  bg_pixmap[SELECTED] = "panel/base.png"
+  bg_pixmap[INSENSITIVE] = "panel/base.png"
+}
+
+widget_class "XfcePanelWindow*" style "panel"
+
+# Fixes for the notification and mixer panel plugins.
+style "panel-inner" {
+  bg[NORMAL] = "#0D0D0D"
+  bg[SELECTED] = "#3D3D3D"
+
+  bg_pixmap[NORMAL] = "panel/base-offset.png"
+  bg_pixmap[PRELIGHT] = "panel/base-offset.png"
+  bg_pixmap[ACTIVE] = "panel/base-offset.png"
+  bg_pixmap[SELECTED] = "panel/base-offset.png"
+  bg_pixmap[INSENSITIVE] = "panel/base-offset.png"
+}
+
+widget "XfcePanelWindowW*" style "panel-inner"
+widget "XfcePanelWindowE*" style "panel-inner"
+
+# Panel buttons.
+style "panel-button" {
+ xthickness = 2
+ ythickness = 2
+
+ bg[SELECTED] = "#3D3D3D"
+
+ engine "pixmap" {
+    image {
+      function = BOX
+      state = NORMAL
+      file = "panel/flash.png"
+      border = {8, 8, 8, 8}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      shadow = OUT
+      state = PRELIGHT
+      file = "panel/prelight.png"
+      border = {8, 8, 8, 8}
+      stretch = TRUE
+    } 
+    image {
+      function = BOX
+      shadow = IN
+      state = PRELIGHT
+      file = "panel/button.png"
+      border = {8, 8, 8, 8}
+      stretch = TRUE
+      overlay_file = "panel/prelight.png"
+      overlay_stretch = TRUE
+      overlay_border = {8, 8, 8, 8}
+    }
+    image {
+      function = BOX
+      state = ACTIVE
+      file = "panel/button.png"
+      border = {8, 8, 8, 8}
+      stretch = TRUE
+    } 
+    image {
+      function = BOX
+      state = INSENSITIVE
+      file = "panel/prelight.png"
+      border = {8, 8, 8, 8}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = SELECTED
+      file = "panel/prelight.png"
+      border = {8, 8, 8, 8}
+      stretch = TRUE
+    }
+  }
+}
+
+widget_class "*Panel*.*Button" style:highest "panel-button"
+
+# Extra padding for taskbar items.
+style "panel-button-large" = "panel-button" {
+ xthickness = 10
+ ythickness = 0
+}
+
+widget_class "*Tasklist*" style:highest "panel-button-large"

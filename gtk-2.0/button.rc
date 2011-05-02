@@ -1,0 +1,36 @@
+################################################################################
+#                                    BUTTONS                                   #
+################################################################################
+
+style "button" {
+  xthickness = 3
+  ythickness = 3
+
+  GtkButton::default_border = {0, 0, 0, 0}
+  GtkButton::inner-border = {0, 0, 0, 0}
+  GtkButton::child-displacement-x = 0
+  GtkButton::child-displacement-y = 0
+  GtkButton::displace-focus = 0
+  GtkButton::image-spacing = 0
+
+  bg[NORMAL] = "#CFCECD" 
+  bg[ACTIVE] = "#BBBBBB"
+  bg[SELECTED] = "#707070" 
+  bg[PRELIGHT] = "#C6C6C6"
+  bg[INSENSITIVE] = "#E6E6E6"
+
+  text[INSENSITIVE] = "#595959"
+  fg[INSENSITIVE] = "#595959"
+  
+  fg[NORMAL] = "#202020"
+  fg[ACTIVE] = "#202020"
+  fg[PRELIGHT] = "#202020"
+
+  engine "clearlooks" {
+    radius = 2.0
+    style = GLOSSY
+  }
+}
+
+class "GtkButton" style "button"
+widget_class "*Tree*Button*" style "button"

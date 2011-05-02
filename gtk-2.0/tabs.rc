@@ -1,0 +1,19 @@
+################################################################################
+#                                     TABS                                     #
+################################################################################
+
+style "notebook" {
+  xthickness = 2
+  ythickness = 1
+
+  bg[NORMAL] = "#FFFFFF"
+  bg[ACTIVE] = "#CCCCCC"
+  bg[SELECTED] = "#FFFFFF"
+
+  engine "clearlooks" {
+    radius = 2.0
+    style = GLOSSY
+  }
+}
+
+widget_class "*<GtkNotebook>" style "notebook"
